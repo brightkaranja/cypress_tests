@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "lib": ["es2017", "dom"],
+    "types": ["cypress", "node"],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "./cypress.config.ts",
+    "./cypress/support/**/*.ts",
+    "./cypress/e2e/**/*.ts"
+  ]
+}
