@@ -11,6 +11,9 @@
   "include": [
     "./cypress.config.ts",
     "./cypress/support/**/*.ts",
-    "./cypress/e2e/**/*.ts"
+    "./cypress/e2e/**/*.ts",
+    "cypress/**/*.ts",
+    "cypress/support/**/*.ts"
   ]
 }
+
