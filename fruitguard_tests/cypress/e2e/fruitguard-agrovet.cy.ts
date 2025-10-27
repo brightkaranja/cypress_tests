@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 
-// Catch uncaught errors
 Cypress.on('uncaught:exception', (err) => {
   console.warn('Uncaught exception:', err.message);
   return false;
@@ -8,10 +7,9 @@ Cypress.on('uncaught:exception', (err) => {
 
 describe('Farmer Registration Flow', () => {
   beforeEach(() => {
-    // Set viewport
+
     cy.viewport(1280, 800);
 
-    // Mock API responses
     cy.intercept('GET', '/api/farmers', {
       statusCode: 200,
       body: [
@@ -43,13 +41,10 @@ describe('Farmer Registration Flow', () => {
       }
     }).as('postDevice');
 
-    // Visit page
     cy.visit('/farmer-registration', { timeout: 30000 });
     cy.wait('@getFarmers', { timeout: 30000 });
     cy.get('h1').should('contain.text', "Farmer's Registration");
   });
-
-  // Removed failing test: Verifies the page title
 
   it('Checks search input exists', () => {
     cy.get('input[placeholder="Search by name or phone number"]')
