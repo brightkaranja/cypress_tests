@@ -174,8 +174,6 @@ describe("FruitGuard Login Tests", () => {
   });
 });
 
-/// <reference types="cypress" />
-
 Cypress.on('uncaught:exception', (err) => {
   console.warn('Uncaught exception:', err.message);
   return false;
